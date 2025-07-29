@@ -21,12 +21,59 @@
   --button-text: #ffffff;
 }
 
-.App {
-  text-align: center;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+/* Main app layout */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+.app-outer {
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 100vw;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar-holder {
+  width: 100vw;
+  z-index: 12;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}
+
+.content-pane {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg-primary);
+  padding: 0 2.2vw 0 2vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-page {
+  width: 100vw;
+  min-height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .content-pane {
+    padding: 0 1vw 0 1vw;
+  }
 }
 
 .App-logo {
